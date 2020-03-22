@@ -3,6 +3,7 @@ version: '3'
 services:
   web:
     build: ../..
+    image: wvv/frontend:latest
     container_name: de-cguard_frontend
     networks:
       - docker
