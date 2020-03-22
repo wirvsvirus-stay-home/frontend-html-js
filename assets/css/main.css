@@ -57,6 +57,9 @@ body {
 .cg-w75 {
   width: 75%;
 }
+.cg-w85 {
+  width: 85%;
+}
 ul {list-style: none}
 h3 {
   color:#02A55D;
@@ -152,6 +155,23 @@ h3 {
 }
 .cg-mission-fail p{
     color: var(--ion-color-danger) !important;
+}
+.cg-shield-icon {
+  height:45px;
+  width: 45px;
+  float: left;
+  margin: 0;
+  padding: 0;
+  min-width: 70px;
+}
+.cg-shield-icon img {
+  max-width: 100%;
+  float: left;
+  display: block;
+  width: 45px;
+}
+.cg-mission-icon-wrapper {
+  min-width: 60px
 }
 .cg-mission-icon {
   height:45px;
@@ -375,6 +395,7 @@ h3 {
   width: 100%;
   position: relative;
 }
+
 .cg-home-navigation {
 
 }
@@ -403,6 +424,39 @@ h3 {
   border-radius: 5px;
   box-sizing: content-box;
   transition: opacity .2s ease-in-out;
+}
+.cg-location-info {
+  font-size:.75em;
+  position: absolute;
+  right:40px;
+  top:45px;
+  z-index: 10;´
+}
+.cg-location-info span {
+  display: block;
+}
+.cg-ticket ul {
+  padding:0;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 110px;
+}
+.cg-ticket ul li {
+  float: left;
+  margin-right: 10px;
+  transition: opacity .3s ease-in-out;
+}
+.cg-ticket ul li.cg-ticket-inactive {
+  opacity: .2;
+}
+.cg-ticket .cg-ticket-inactive {
+  filter: grayscale(100%);
+}
+.cg-ticket ul li:last-child {
+  margin:0;
+}
+.cg-ticket ul li img {
+  max-width: 30px;
 }
 .cg-progressbar {
   height: 340px;
@@ -462,7 +516,18 @@ h3 {
   margin: 0 auto;
   z-index: 10;
   overflow: hidden;
+  transition: height 1s ease-in-out;
 }
+
+/* Remove Fake Animation */
+.baseOrangeStatusActive .cg-progress-mask {
+  height: 191px;
+}
+.baseRedStatusActive .cg-progress-mask {
+  height: 90px;
+}
+
+/* Remove */
 
 .baseRedStatusActive .cg-progress {
   width: 380px;
@@ -788,4 +853,45 @@ h3 {
   margin-right: 10px;
   --padding-start: 20px;
   --padding-end: 20px;
+}
+
+
+/* Mission Action  */
+
+.cg-mission-action {
+  margin: 50px 0 30px 0
+}
+.cg-mission-item-hidden {
+  display: none;
+}
+.cg-accept-ticket.cg-mission-item {
+  background-image: linear-gradient(0deg, #067BE1 0%, #00B1FF 100%);
+  border:1px solid #02A0F5;
+  cursor: pointer;
+}
+.cg-accept-ticket:after {
+  background: url(../img/forward-icon.png);
+  background-size: 16px auto;
+  background-repeat: no-repeat;
+  content:'';
+  display: block;
+  width:35px;
+  height:35px;
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  transition: transform .2s ease-in-out;
+}
+.cg-accept-ticket a,
+.cg-accept-ticket .cg-mission-complete p {
+  color: #fff !important;
+  text-shadow: 0px 1px 2px rgba(0,0,0, .3);
+  display:block;
+  overflow: hidden;
+  transition: opacity .3s ease-in-out;
+}
+.cg-accept-ticket.cg-mission-item a:hover {
+}
+.cg-accept-ticket:hover:after {
+  transform: translate(10px,0px);
 }
