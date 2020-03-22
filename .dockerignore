@@ -1,0 +1,5 @@
+*.iml
+.idea/
+docker/
+README.md
+LICENSE
