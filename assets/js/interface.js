@@ -35,6 +35,12 @@ $(document).ready(function(){
     event.preventDefault();
     /* Show Ticket */
     $('.cg-ticket ul li:first-child').removeClass('cg-ticket-inactive');
+
+    /* Recharge (Energy burst) Animation */;
+    $('body').addClass('cg-power-item ').delay(1500).queue(function(next){
+         $(this).removeClass('cg-power-item');
+         next();
+    });
     /**/
 
     /* Hide Mission Toggle */
@@ -63,7 +69,10 @@ $(document).ready(function(){
   });
 
   $("#toggle-orange").on("click", function(){
-    
+    $('body').addClass('baseOrangeStatusActive');
+    $('body').removeClass('baseRedStatusActive');
+    $(".cg-base-status-headline").text("Return to base");
+    $(".cg-base-status-subline").text("0:30 h");
   });
 
   $("#toggle-red").on("click", function(){

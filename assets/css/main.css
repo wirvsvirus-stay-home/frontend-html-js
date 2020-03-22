@@ -500,7 +500,7 @@ h3 {
   background-repeat: no-repeat;
 }
 .cg-progress-mask {
-  height: 90px;
+  height: 151px;
 
   /*Progress 0% = height: 261px */
   /*Progress 100% = height: 90px */
@@ -569,6 +569,30 @@ h3 {
   position: relative;
   height:274px;
   width: 274px;
+  overflow: hidden;
+}
+.cg-base:before {
+  background: #0374ff;
+  mix-blend-mode: hard-light;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  height:274px;
+  width: 274px;
+  content:'';
+  display: block;
+  z-index: 10;
+  border-radius: 134px;
+  opacity: 0;
+  animation-duration: .4s;
+  animation-direction: forward;
+  animation-name: recharge;
+  animation-iteration-count: 1;
+  animation-play-state: paused;
+}
+.cg-power-item .cg-base:before {
+  animation-play-state: running;
 }
 
 #cg-base-status-wrapper {
