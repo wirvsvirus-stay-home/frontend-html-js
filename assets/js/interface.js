@@ -43,6 +43,10 @@ $(document).ready(function(){
     });
     /**/
 
+    /* Reset Height+ Timer  */
+    $('.cg-progress-mask').css("height","261px");
+    $(".cg-base-status-subline").text("1:00 h");
+
     /* Hide Mission Toggle */
     $(this).fadeOut('');
     $(this).queue(function() {
@@ -73,6 +77,7 @@ $(document).ready(function(){
     $('body').removeClass('baseRedStatusActive');
     $(".cg-base-status-headline").text("Return to base");
     $(".cg-base-status-subline").text("0:30 h");
+    $('.cg-progress-mask').css("height","90px");
   });
 
   $("#toggle-red").on("click", function(){
@@ -80,6 +85,7 @@ $(document).ready(function(){
     $('body').removeClass('baseOrangeStatusActive');
     $(".cg-base-status-headline").text("Base unprotected");
     $(".cg-base-status-subline").text("0:10 h");
+    $('.cg-progress-mask').css("height","90px");
   });
 
   /* Remove End*/
