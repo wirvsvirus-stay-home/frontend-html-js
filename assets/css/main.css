@@ -447,7 +447,7 @@ h3 {
   transition: opacity .3s ease-in-out;
 }
 .cg-ticket ul li.cg-ticket-inactive {
-  opacity: .2;
+  opacity: .1;
 }
 .cg-ticket .cg-ticket-inactive {
   filter: grayscale(100%);
@@ -918,4 +918,97 @@ h3 {
 }
 .cg-accept-ticket:hover:after {
   transform: translate(10px,0px);
+}
+
+/* Media Queries */
+
+@media (max-width: 540px) {
+
+  .cg-zoom-wrapper {
+    zoom: .9;
+  }
+  .cg-stage {
+    margin-bottom: -30px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .cg-zoom-wrapper {
+    zoom: .8;
+  }
+  .cg-stage {
+    margin-bottom: -60px;
+    height:320px;
+  }
+
+  .cg-home-screen-active .cg-sub-navigation {
+    margin-bottom: -50px;
+  }
+
+  .cg-leaderboard-screen {
+    padding-top: 80px;
+  }
+  .cg-leaderboard-tablehead .cg-w15 {
+    width:25%;
+  }
+  .cg-leaderboard-tablehead .cg-w70 {
+    width: 50%;
+  }
+  .cg-leadeboard .cg-score {
+    font-size: 14px;
+    padding: 0 10px 0 0;
+    line-height: 50px;
+  }
+  .cg-player-global-rank {
+    padding:0 5px;
+  }
+
+  .cg-sub-navigation .cg-column-wrapper li:first-of-type {
+    width:25px;
+  }
+  .cg-sub-navigation .cg-column-wrapper li:first-of-type + li {
+    width:calc(100% - 26px);
+  }
+  .cg-sub-navigation .cg-column-wrapper li:last-of-type + li {
+    width:1px;
+  }
+
+  .cg-location-info {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    z-index: 40;
+    width: 100%;
+  }
+  .cg-location-info span strong,
+  .cg-location-info span span {
+    width: 33%;
+    float: left;
+  }
+  .cg-mission-item {
+    padding: 10px;
+  }
+  .cg-mission-complete {
+    padding-left:10px;
+  }
+  .cg-accept-ticket .cg-mission-complete {
+    padding-left:0px;
+  }
+  .cg-accept-ticket:after {
+    background: url(../img/forward-icon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 20px;
+    right: 2px;
+    transition: transform .2s ease-in-out;
+  }
+  .cg-mission-icon-wrapper {
+    min-width: 55px;
+  }
 }

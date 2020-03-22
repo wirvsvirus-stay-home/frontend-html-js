@@ -1,8 +1,4 @@
-$(document).ready(function(){
-    //
-    //
-    
-
+$(document).ready(function(){ 
     var location = {
         lat: 0,
         long: 0
@@ -37,31 +33,6 @@ $(document).ready(function(){
     }
 
     get_leaderboard();
-    setInterval(get_leaderboard, 30000);
-    var protected_interval = setInterval(function(){
-        var time_ms_old = getCookie("cguard-time");
-        var time_ms_now = Date.now();
-        var time_left = (1000 * 60 * 60) - (time_ms_now - time_ms_old);
-        var time_string = parseInt(time_left/1000/60/60)+":"+parseInt(time_left/1000/60)+" h";
-        update_progress(protected_interval, time_string);
-        if(time_left < 600000 && $(".cg-recharge-base").css("display") == "none"){
-            $(".cg-recharge-base").fadeIn();
-        }else if(time_left <= 0){
-            $('body').addClass('baseOrangeStatusActive');
-            $('body').removeClass('baseRedStatusActive');
-            $(".cg-base-status-headline").text("Return to base");
-            $(".cg-base-status-subline").text("0:30 h");
-            var abandoned_interval = setInterval(function(){
-                var time_ms_now = Date.now();
-                var time_left = (1000 * 60 * 30) - (time_ms_now - time_ms_old);
-                var time_string = parseInt(time_left/1000/60/60)+":"+parseInt(time_left/1000/60)+" h";
-                update_progress(abandoned_interval, time_string);
-            }, 2000);
-        }
-    }, 36000);
-    
-
-    var user = null;
 
 
  });
@@ -88,23 +59,6 @@ function getCookie(cname) {
     return "";
   }
 
-  function update_progress(interval, time){		
-    var current_height = $('.cg-progress-mask').css("height");		
-    if(current_height[0] === "9"){		
-        current_height = current_height.substring(0, 2);		
-    }else{		
-        current_height = current_height.substring(0, 3);		
-    }		
-    console.log(current_height);		
-    if(current_height === "261"){		
-        clearInterval(interval);		
-    }else{		
-        current_height++;		
-        $('.cg-progress-mask').css("height", current_height + "px");		
-        $(".cg-base-status-subline").text(time);		
-    }		
- }
-
 function createUUID() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
@@ -113,7 +67,6 @@ function createUUID() {
  }
 
  function get_leaderboard(){
-    var rank = 1;
     $.get("https://www.cguard.de/api/v1/leaders", function(data){
         var list = "";
         for(index in data["content"]){
@@ -128,7 +81,7 @@ function createUUID() {
                             '<div>' +
                                 '<img class="cg-player-name-rank" src="assets/img/ranks/rank-4.png" />' +
                                 '<h2><img class="cg-player-flag" src="assets/img/flags/de.png" />' + leader.username + '</h2>' +
-                                '<p>Rank #' + rank++ + '</p>' +
+                                '<p>Rank #' + leader.rank + '</p>' +
                             '</div>' +
                         '</div>' +
                         '<div class="cg-column cg-player-background cg-w15">' +
