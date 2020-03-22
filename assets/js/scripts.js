@@ -1,23 +1,13 @@
 $(document).ready(function(){
 
-    $("cg-start-game").click(function(){
-        setCookie("cguard-user", createUUID(), 365);
-        $.post("https://www.cguard.de/api/v1/users",
-            {
-                "country": "",
-                "latitude": "",
-                "longitude":"",
-                "radius": 100
-            },
-            function(data){
-
-            }
-        )
-    });
+    var user = null;
 
     if(getCookie("cguard-user") === ""){
         setCookie("cguard-user", createUUID(), 365);
     }else{
+        // $.get("localhost:3000/users/" + getCookie("cguard-user"), function(data){
+        //     console.log(data);
+        // });
     }
 
     get_leaderboard();
@@ -77,23 +67,6 @@ function createUUID() {
        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
        return v.toString(16);
     });
- }
-
- function update_progress(interval, time){
-    var current_height = $('.cg-progress-mask').css("height");
-    if(current_height[0] === "9"){
-        current_height = current_height.substring(0, 2);
-    }else{
-        current_height = current_height.substring(0, 3);
-    }
-    console.log(current_height);
-    if(current_height === "261"){
-        clearInterval(interval);
-    }else{
-        current_height++;
-        $('.cg-progress-mask').css("height", current_height + "px");
-        $(".cg-base-status-subline").text(time);
-    }
  }
 
  function get_leaderboard(){
