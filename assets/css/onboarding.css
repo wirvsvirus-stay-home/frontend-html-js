@@ -1,0 +1,169 @@
+body {
+
+}
+
+* , textarea, select, input, button, a{
+
+  outline: none;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Opera and Firefox */
+}
+
+.cg-onboarding-wrapper {
+  padding:100px 20px;
+}
+.cg-onboarding {
+  background: #26372f url(../img/onboarding/space-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border:1px solid #08643a;
+  border-radius: 8px;
+  box-shadow: 0px 20px 25px rgba(0,0,0,0.2);
+  padding:30px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.cg-start-game {
+  display: block;
+  color:#fff;
+  text-decoration: none;;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size:1.1em;
+  border:1px solid #00c66b;
+  margin: 20px auto;
+  background-image: -moz-linear-gradient( -90deg, rgb(0,189,101) 0%, rgb(0,143,78) 100%);
+  background-image: -webkit-linear-gradient( -90deg, rgb(0,189,101) 0%, rgb(0,143,78) 100%);
+  background-image: -ms-linear-gradient( -90deg, rgb(0,189,101) 0%, rgb(0,143,78) 100%);
+  box-shadow: 0px 5px 8px rgba(0,0,0,0.2);
+  position:relative;
+  cursor: pointer;
+}
+.cg-start {
+  display: block;
+  color:#fff;
+  text-decoration: none;
+  width: 320px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size:1.1em;
+  border:1px solid #00c66b;
+  margin: 20px auto;
+  background-image: -moz-linear-gradient( -90deg, rgb(0,189,101) 0%, rgb(0,143,78) 100%);
+  background-image: -webkit-linear-gradient( -90deg, rgb(0,189,101) 0%, rgb(0,143,78) 100%);
+  background-image: -ms-linear-gradient( -90deg, rgb(0,189,101) 0%, rgb(0,143,78) 100%);
+  box-shadow: 0px 5px 8px rgba(0,0,0,0.2);
+  position:relative;
+  cursor: pointer;
+}
+.cg-start-game:before {
+  background: url(../img/location-icon.png);
+  background-size: 27px auto;
+  background-repeat: no-repeat;
+  content:'';
+  display: block;
+  width:35px;
+  height:35px;
+  position: absolute;
+  top: 18px;
+  left: 10px;
+}
+.cg-start:before {
+  background: url(../img/cguard-signet.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  content:'';
+  display: block;
+  width:35px;
+  height:35px;
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  transition: transform .2s ease-in-out;
+  webkit-filter: drop-shadow(0px 0px 0px 1px rgba(0,0,0,0.9));
+  filter: drop-shadow(0px 0px 0px 1px rgba(0,0,0,0.9));
+}
+.cg-start-game:after,
+.cg-start:after {
+  background: url(../img/forward-icon.png);
+  background-size: 16px auto;
+  background-repeat: no-repeat;
+  content:'';
+  display: block;
+  width:35px;
+  height:35px;
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  transition: transform .2s ease-in-out;
+}
+.cg-start:hover:after {
+  transform: translate(10px,0px);
+}
+.cg-signet-wrapper {
+  max-width: 120px;
+  margin: 0 auto;
+  display: block;
+}
+.cg-logo-wrapper figure {
+  margin-bottom:0;
+  padding:0;
+}
+.cg-logo-wrapper h4 {
+  color:#00af5e;
+  font-weight: 100;
+  width: 100%;
+  text-align: center;
+  margin-top:0px;
+}
+.cg-base-still-wrapper {
+  padding:20px;
+  margin: 0;
+}
+.cg-logo-wrapper img,
+.cg-signet-wrapper img,
+.cg-base-still-wrapper img {
+  max-width: 100%;
+}
+
+.cg-game-description h2 {
+  color:#00af5e;
+}
+.cg-game-description strong {
+  padding: 20px 0px;
+  font-size: .9em;
+  color:#00af5e;
+  margin: 0;
+  display: block;
+  text-align: center;
+}
+.cg-game-description small {
+  display: block;
+  text-align: center;
+}
+.cg-game-description p {
+  padding: 20px 0px;
+  font-size: .9em;
+  color:#fff;
+  margin: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+}
+.cg-game-description  img.cg-base-icon {
+  max-width: 60px;
+
+  float: left;
+  margin:0px 15px 10px 0px;
+}

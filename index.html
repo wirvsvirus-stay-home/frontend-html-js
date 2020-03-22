@@ -24,335 +24,58 @@
   <meta name="msapplication-TileImage" content="assets/img/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="assets/css/main.css?v=1.0">
+  <link rel="stylesheet" href="assets/css/onboarding.css?v=1.0">
   <link rel="stylesheet" href="assets/css/animate.css?v=1.0">
+  <link rel="stylesheet" href="assets/css/slick.css?v=1.0">
+  <link rel="stylesheet" href="assets/css/slick-theme.css?v=1.0">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="assets/js/scripts.js"></script>
   <script src="assets/js/interface.js"></script>
-
+  <script src="assets/js/slick.min.js"></script>
+  <script src="assets/js/onboarding.js"></script>
 </head>
 
-<body class="cg-bg cg-home-screen-active">
+<body class="cg-bg">
 
-<header class="cg-cockpit animated fadeInDown">
-  <div class="cg-cockpit-inner-wrapper">
-        <div class="cg-cockpit-left-edge">
-        </div>
-        <div class="cg-cockpit-content">
-          <div class="cg-player">
-            <img src="assets/img/fake-avatar.png" />
-          </div>
-          <div class="cg-player-rank">
-            <small>RANK</small>
-            <img src="assets/img/ranks/rank-4.png" />
-            <strong>4</strong>
-          </div>
-          <div class="cg-player-score">
-            <small>TODAY's SCORE</small>
-            <span><strong>900</strong>CG</span>
-          </div>
-          <div class="cg-location-info">
-            <span>
-            <strong>Base Coordinates:</strong>
-            <span>Lat: 50.760908</span>
-            <span>Long: 6.0850176</span>
-            </span>
-          </div>
-        </div>
-    <div class="cg-cockpit-right-edge"></div>
-  </div>
-</header>
+<div class="cg-wrapper cg-onboarding-wrapper">
 
-<nav class="cg-sub-navigation">
-    <ul class="cg-column-wrapper">
-      <li class="cg-column cg-w33"><a class="cg-leaderboard-back-button"></a></li>
-      <li class="cg-column cg-w33">Global Leaderboard</li>
-      <li class="cg-column cg-w33"></li>
-    </ul>
-</nav>
+  <div class="cg-onboarding cg-onboarding-slider">
 
-<div class="cg-screen-holder">
-<div class="cg-wrapper cg-screen cg-home-screen">
-
-<div class="cg-stage animated fadeInUp cg-delay-05s">
-
-<div class="cg-column-wrapper cg-home-navigation animated fadeIn cg-delay-1-5s">
-    <div class="cg-column cg-w33 cg-share-toggle">
-      <a href="#"></a>
+    <div>
+      <figure class="cg-signet-wrapper animated fadeInUp cg-delay-1"><img src="assets/img/cguard-signet.png" /></figure>
+      <div class="cg-logo-wrapper animated fadeIn cg-delay-03">
+        <figure><img src="assets/img/cguard-logo.png" /></figure>
+        <h4><strong>#stayathome</strong> - protect your base. Geofencing game.</h4>
+      </div>
+      <figure class="cg-base-still-wrapper"><img class="cg-base-still" src="assets/img/onboarding/base-still.png" /></figure>
+      <a href="#" class="cg-start" data-slide="2">Start game</a>
     </div>
-    <div class="cg-column cg-w33 cg-ticket">
-      <ul>
-        <li class="cg-ticket-inactive"><img src="assets/img/shield-dark-green.png" /></li>
-        <li class="cg-ticket-inactive"><img src="assets/img/shield-dark-green.png" /></li>
-        <li class="cg-ticket-inactive"><img src="assets/img/shield-dark-green.png" /></li>
-      </ul>
+    <div class="cg-game-description">
+      <h2>Spielprinzip:</h2>
+
+      <p><img class="cg-base-icon" src="assets/img/onboarding/base-green.png" />
+        Halte den Schild deiner Basis aufrecht in dem du es jede Stunde auflädst. Für jede erfolgreiche Aufladung erhältst du ein Power-Item.
+      </p>
+
+      <p>
+      <img  class="cg-base-icon"src="assets/img/onboarding/base-orange.png" />
+      Verlässt du deine Basis, für länger als 30 Minuten, können Mitspieler deine Basis auskundschaften, und dir Punkte sowie Power-Items stehlen. Außerdem verliert deine Basis ohne Energie im 10 Minuten Takt 50 Punkte.
+      </p>
+
+      <p>
+      <img class="cg-base-icon" src="assets/img/onboarding/base-red.png" />
+      Sobald du 3 Power-Item gesammelt hast, kannst du selbst eine zufällige, unbeschützte Basis, auskundschaften und einem Mitspieler Punkte / Items stehlen.
+      </p>
+
+      <strong>Also, #stayathome und versorge deine Basis mit Energie! <br />Viel Spaß!</strong>
+      <a href="homescreen.html" class="cg-start-game">Standort setzen und starten</a>
+      <small>(Bitte beachte die Standortfreigabe deines Browsers / Smartphone)</small>
     </div>
-    <div class="cg-column cg-w33 cg-leaderboard-toggle">
-      <a href="#"></a>
-    </div>
-</div>
-
-<!-- Shield fully loaded Wrapper -->
-<div id="cg-base-status-wrapper" class="cg-base-wrapper">
-     <div class="cg-base">
-       <div class="cg-base-inside-wrapper">
-         <div class="cg-base-graphic">
-           <img class="cg-base-animation" src="assets/animation/base.gif" />
-         </div>
-         <div class="cg-base-status">
-           <h2 class="cg-base-status-headline">Base protected</h2>
-           <small class="cg-base-status-subline">0:10 h</small>
-         </div>
-       </div>
-     </div>
-</div>
-<!-- Shield Wrapper End -->
-
-<!-- Progress bar -->
-<div class="cg-progressbar animated cg-scaleIn-x cg-delay-1s">
-    <div class="cg-progress-mask"></div>
-    <div class="cg-progress"></div>
-</div>
-<!-- Progress bar End -->
-</div>
-
-<div class="cg-mission-action">
-<ul class="cg-mission-list cg-wrapper">
-<li class="cg-mission-item cg-accept-ticket cg-recharge-base cg-column-wrapper">
-    <a href="#">
-    <div class="cg-column cg-w10 cg-mission-icon-wrapper">
-        <figure class="cg-shield-icon">
-          <img src="assets/animation/shield-blue.gif" />
-        </figure >
-    </div>
-    <div class="cg-mission-complete cg-column cg-w90">
-      <h2>Check In - Recharge Base Shield</h2>
-      <p>Time to Accept Mission <span class="cg-mission-timer">0:10 h</span></p>
-    </div>
-    </a>
-</li>
-</ul>
-</div>
-
-<h3>Mission History</h3>
-
-<ul class="cg-mission-list cg-wrapper">
-
-  <!-- -->
-  <li class="cg-mission-item cg-mission-item-hidden cg-column-wrapper">
-      <div class="cg-column cg-w15">
-        <time>3:34 AM</time>
-      </div>
-      <div class="cg-mission-complete cg-column cg-w70">
-        <h2>Full hour in base</h2>
-        <p>Well done! <strong>+200 C</strong></p>
-      </div>
-      <div class="cg-column cg-w15">
-        <figure class="cg-mission-icon">
-          <img src="assets/img/shield-dark-green.png" />
-        </figure >
-      </div>
-  </li>
-  <!-- -->
-
-  <li class="cg-mission-item cg-column-wrapper">
-      <div class="cg-column cg-w15">
-        <time>2:34 AM</time>
-      </div>
-      <div class="cg-mission-complete cg-column cg-w70">
-        <h2>Full hour in base</h2>
-        <p>Well done! <strong>+200 C</strong></p>
-      </div>
-      <div class="cg-column cg-w15">
-        <figure class="cg-mission-icon">
-          <img src="assets/img/shield-dark-green.png" />
-        </figure >
-      </div>
-  </li>
-
-  <li class="cg-mission-item cg-column-wrapper">
-      <div class="cg-column cg-w15">
-        <time>2:34 AM</time>
-      </div>
-      <div class="cg-mission-complete cg-column cg-w70">
-        <h2>Full hour in base</h2>
-        <p>Well done! <strong>+200 C</strong></p>
-      </div>
-      <div class="cg-column cg-w15">
-        <figure class="cg-mission-icon">
-          <img src="assets/img/shield-dark-green.png" />
-        </figure >
-      </div>
-  </li>
-  <li class="cg-mission-item cg-column-wrapper">
-      <div class="cg-column cg-w15">
-        <time>2:34 AM</time>
-      </div>
-      <div class="cg-mission-complete cg-column cg-w70">
-        <h2>Full hour in base</h2>
-        <p>Well done! <strong>+200 C</strong></p>
-      </div>
-      <div class="cg-column cg-w15">
-        <figure class="cg-mission-icon">
-          <img src="assets/img/shield-dark-green.png" />
-        </figure >
-      </div>
-  </li>
-  <li class="cg-mission-item cg-column-wrapper">
-      <div class="cg-column cg-w15">
-        <time>2:34 AM</time>
-      </div>
-      <div class="cg-mission-complete cg-column cg-w70">
-        <h2>Full hour in base</h2>
-        <p>Well done! <strong>+200 C</strong></p>
-      </div>
-      <div class="cg-column cg-w15">
-        <figure class="cg-mission-icon">
-          <img src="assets/img/shield-dark-green.png" />
-        </figure >
-      </div>
-  </li>
-  <li class="cg-mission-item cg-column-wrapper">
-      <div class="cg-column cg-w15">
-        <time>2:34 AM</time>
-      </div>
-      <div class="cg-mission-complete cg-column cg-w70">
-        <h2>Full hour in base</h2>
-        <p>Well done! <strong>+200 C</strong></p>
-      </div>
-      <div class="cg-column cg-w15">
-        <figure class="cg-mission-icon">
-          <img src="assets/img/shield-dark-green.png" />
-        </figure >
-      </div>
-  </li>
-</ul>
-</div>
-
-<div class="cg-wrapper cg-screen cg-leaderboard-screen">
-
-  <div class="cg-column-wrapper cg-leaderboard-tablehead">
-    <div class="cg-column cg-w15">Global Rank</div>
-    <div class="cg-column cg-w70">Player</div>
-    <div class="cg-column cg-w15">Score</div>
   </div>
 
-  <ul id="leaderboard" class="cg-mission-list cg-leadeboard cg-wrapper">
 
-    <!-- Player -->
-    <li class="cg-mission-item cg-player-bar cg-player-background cg-column-wrapper">
-        <div class="cg-column cg-player-global-rank cg-w10">
-            1
-        </div>
-        <div class="cg-mission-complete cg-player-background cg-player-name-wrapper cg-column cg-w75">
-          <img class="cg-player-name-avatar" src="assets/img/fake-avatar.png" />
-          <div>
-            <img class="cg-player-name-rank" src="assets/img/ranks/rank-4.png" />
-            <h2><img class="cg-player-flag" src="assets/img/flags/de.png" />Priscilla</h2>
-            <p>Rank #5</p>
-          </div>
-        </div>
-        <div class="cg-column cg-player-background cg-w15">
-          <strong class="cg-score">1000 C</strong>
-        </div>
-    </li>
-    <!-- Player End -->
-
-    <li class="cg-mission-item cg-player-bar cg-player-background cg-column-wrapper">
-        <div class="cg-column cg-player-global-rank cg-w10">
-            1
-        </div>
-        <div class="cg-mission-complete cg-player-background cg-player-name-wrapper cg-column cg-w75">
-          <img class="cg-player-name-avatar" src="assets/img/fake-avatar.png" />
-          <div>
-            <img class="cg-player-name-rank" src="assets/img/ranks/rank-4.png" />
-            <h2><img class="cg-player-flag" src="assets/img/flags/de.png" />Priscilla</h2>
-            <p>Rank #5</p>
-          </div>
-        </div>
-        <div class="cg-column cg-player-background cg-w15">
-          <strong class="cg-score">1000 C</strong>
-        </div>
-    </li>
-
-    <li class="cg-mission-item cg-player-bar cg-player-background cg-column-wrapper">
-        <div class="cg-column cg-player-global-rank cg-w10">
-            1
-        </div>
-        <div class="cg-mission-complete cg-player-background cg-player-name-wrapper cg-column cg-w75">
-          <img class="cg-player-name-avatar" src="assets/img/fake-avatar.png" />
-          <div>
-            <img class="cg-player-name-rank" src="assets/img/ranks/rank-4.png" />
-            <h2><img class="cg-player-flag" src="assets/img/flags/de.png" />Priscilla</h2>
-            <p>Rank #5</p>
-          </div>
-        </div>
-        <div class="cg-column cg-player-background cg-w15">
-          <strong class="cg-score">1000 C</strong>
-        </div>
-    </li>
-
-    <li class="cg-mission-item cg-player-bar cg-player-background cg-column-wrapper">
-        <div class="cg-column cg-player-global-rank cg-w10">
-            1
-        </div>
-        <div class="cg-mission-complete cg-player-background cg-player-name-wrapper cg-column cg-w75">
-          <img class="cg-player-name-avatar" src="assets/img/fake-avatar.png" />
-          <div>
-            <img class="cg-player-name-rank" src="assets/img/ranks/rank-4.png" />
-            <h2><img class="cg-player-flag" src="assets/img/flags/de.png" />Priscilla</h2>
-            <p>Rank #5</p>
-          </div>
-        </div>
-        <div class="cg-column cg-player-background cg-w15">
-          <strong class="cg-score">1000 C</strong>
-        </div>
-    </li>
-
-    <li class="cg-mission-item cg-player-bar cg-player-background cg-column-wrapper">
-        <div class="cg-column cg-player-global-rank cg-w10">
-            1
-        </div>
-        <div class="cg-mission-complete cg-player-background cg-player-name-wrapper cg-column cg-w75">
-          <img class="cg-player-name-avatar" src="assets/img/fake-avatar.png" />
-          <div>
-            <img class="cg-player-name-rank" src="assets/img/ranks/rank-4.png" />
-            <h2><img class="cg-player-flag" src="assets/img/flags/de.png" />Priscilla</h2>
-            <p>Rank #5</p>
-          </div>
-        </div>
-        <div class="cg-column cg-player-background cg-w15">
-          <strong class="cg-score">1000 C</strong>
-        </div>
-    </li>
-
-    <li class="cg-mission-item cg-player-bar cg-player-background cg-column-wrapper">
-        <div class="cg-column cg-player-global-rank cg-w10">
-            1
-        </div>
-        <div class="cg-mission-complete cg-player-background cg-player-name-wrapper cg-column cg-w75">
-          <img class="cg-player-name-avatar" src="assets/img/fake-avatar.png" />
-          <div>
-            <img class="cg-player-name-rank" src="assets/img/ranks/rank-4.png" />
-            <h2><img class="cg-player-flag" src="assets/img/flags/de.png" />Priscilla</h2>
-            <p>Rank #5</p>
-          </div>
-        </div>
-        <div class="cg-column cg-player-background cg-w15">
-          <strong class="cg-score">1000 C</strong>
-        </div>
-    </li>
-
-  </ul>
 </div>
-
-<!-- Remove Later -->
-<div style="padding:20px">
-<button id="toggle-green"> Toggle Green Base</a>
-<button id="toggle-orange"> Toggle Orange Base</a>
-<button id="toggle-red"> Toggle Red Base</a>
-</div>
-<!-- Remove End -->
 
 </body>
 </html>
