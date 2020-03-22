@@ -500,7 +500,7 @@ h3 {
   background-repeat: no-repeat;
 }
 .cg-progress-mask {
-  height: 151px;
+  height: 90px;
 
   /*Progress 0% = height: 261px */
   /*Progress 100% = height: 90px */

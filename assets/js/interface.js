@@ -63,10 +63,7 @@ $(document).ready(function(){
   });
 
   $("#toggle-orange").on("click", function(){
-    $('body').addClass('baseOrangeStatusActive');
-    $('body').removeClass('baseRedStatusActive');
-    $(".cg-base-status-headline").text("Return to base");
-    $(".cg-base-status-subline").text("0:30 h");
+    
   });
 
   $("#toggle-red").on("click", function(){
