@@ -4,7 +4,7 @@ services:
   web:
     build: ../..
     image: wvv/frontend:latest
-    container_name: de-cguard_frontend
+    container_name: de-cguard-frontend
     networks:
       - docker
     labels:
