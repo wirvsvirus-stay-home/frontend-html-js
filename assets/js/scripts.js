@@ -1,6 +1,28 @@
-$(document).ready(function(){
+$(document).ready(function(){ 
+    var location = {
+        lat: 0,
+        long: 0
+    };
 
-    var user = null;
+    $("cg-start-game").click(function(){
+        getLocation();
+        $.post("https://www.cguard.de/api/v1/users",		
+            {		
+                "country": "DE",		
+                "latitude": location.lat,		
+                "longitude":location.long,		
+                "radius": 100		
+            },		
+            function(data){		
+                setCookie("cguard-userid", data.user.id, 365);
+                $("cg-player-score").find("strong").text(data.user.score);
+                $("cg-player-rank").find("strong").text(data.user.rank);
+                var pos_span = $(".cg-location-info").children().find("span");
+                $(pos[0]).text("Lat: " + data.user.lat);
+                $(pos[1]).text("Long: " + data.user.long);
+            }		
+        )		
+    });
 
     if(getCookie("cguard-user") === ""){
         setCookie("cguard-user", createUUID(), 365);
@@ -69,4 +91,15 @@ function createUUID() {
         }
         $('#leaderboard').html(list);
     });
+ }
+
+ function getLocation(){
+     if(navigator.geolocation){
+         navigator.geolocation.getCurrentPosition(function(position){
+            location.lat = position.coords.latitude;
+            location.long = position.coords.longitude;
+         });
+     }else{
+         alert("Geolocation not supported by your browser");
+     }
  }
