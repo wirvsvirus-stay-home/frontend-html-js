@@ -20,6 +20,7 @@ $(document).ready(function(){
     }else{
     }
 
+    get_leaderboard();
     setInterval(get_leaderboard, 30000);
     var protected_interval = setInterval(function(){
         var time_ms_old = getCookie("cguard-time");
@@ -96,6 +97,7 @@ function createUUID() {
  }
 
  function get_leaderboard(){
+    var rank = 1;
     $.get("https://www.cguard.de/api/v1/leaders", function(data){
         var list = "";
         for(index in data["content"]){
@@ -110,7 +112,7 @@ function createUUID() {
                             '<div>' +
                                 '<img class="cg-player-name-rank" src="assets/img/ranks/rank-4.png" />' +
                                 '<h2><img class="cg-player-flag" src="assets/img/flags/de.png" />' + leader.username + '</h2>' +
-                                '<p>Rank #' + leader.rank + '</p>' +
+                                '<p>Rank #' + rank++ + '</p>' +
                             '</div>' +
                         '</div>' +
                         '<div class="cg-column cg-player-background cg-w15">' +
